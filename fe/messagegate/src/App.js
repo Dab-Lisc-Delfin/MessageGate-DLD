@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <section id="login-page">
-        <div className='container'>
+        <div className='container login-container'>
           <div className='row'>
             <LoginPanel/>
           </div>
