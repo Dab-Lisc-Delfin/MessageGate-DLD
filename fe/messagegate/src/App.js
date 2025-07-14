@@ -1,17 +1,17 @@
 import './App.css';
-import './scss/login-page.scss'
-import LoginPanel from './login-page/login-panel';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginPanel from './pages/login-page/login-panel';
+import RegisterPanel from './pages/register-page/register-panel';
 function App() {
 
   return (
     <div className="App">
-      <section id="login-page">
-        <div className='container login-container'>
-          <div className='row'>
-            <LoginPanel/>
-          </div>
-        </div>
-      </section>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LoginPanel/>} />
+          <Route path="/register" element={<RegisterPanel/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
