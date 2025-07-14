@@ -35,7 +35,6 @@ $padding-login-page: 50px 20px 300px 20px;
                         padding: 0px;
                         overflow: hidden;
                         position: relative;
-                        box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.1);
                         opacity: 0;
                         transition: all 1s;
                         &.login-loaded{
@@ -50,8 +49,13 @@ $padding-login-page: 50px 20px 300px 20px;
                             display: flex;
                             flex-direction: column;
                             justify-content: space-between;
+                            opacity: 1;
+                            transition: all 1s;
                             @media (max-width:991px) {
                                 display: none;
+                            }
+                            &.login-hide{
+                                opacity: 0;
                             }
                             .login-equalizer{
                                 margin-top: 100px;
@@ -82,13 +86,15 @@ $padding-login-page: 50px 20px 300px 20px;
                             justify-content: space-between;
                             background-image: $base-gradient;
                             padding: $padding-login-page;
-                            box-shadow: -4px 0px 5px rgba(0, 0, 0, 0.1);
                             transition: all 1.5s;
-                            &.register-right-panel{
-                                right: 0px;
-                            }
                             &.login-loaded{
                                 right: 0px;
+                            }
+                            &.login-hide{
+                                right: -100%;
+                                @media (max-width:991px) {
+                                    right: 0px;
+                                }
                             }
                             @media (max-width:991px) {
                                 padding: 50px 30px 150px 30px;

@@ -3,15 +3,21 @@ import { useNavigate } from "react-router-dom";
 import '../../scss/pages/home-pages.scss'
 function RegisterPanel() {
     const navigate = useNavigate();
+    const [show, setShow] = useState(false);
+    const [hide, setHide] = useState(false);
     const [showOverflow, setShowOverflow] = useState(false);
     const [showPwd, setShowPwd] = useState(false);
     useEffect(() => {
+        setShow(true);
         setTimeout(() => {
         setShowOverflow(true);
         }, 500);
     }, []);
     function redirectRegister() {
-        navigate("/");
+        setHide(true);
+        setTimeout(() => {
+            navigate("/");
+        }, 1000);
     }
     function showPassword(){
         setShowPwd(!showPwd);
@@ -22,7 +28,7 @@ function RegisterPanel() {
         <div className='container login-container'>
             <div className='row'>
                 <div className={`login-row-wrapper ${showOverflow ? 'login-loaded': ''}`}>
-                    <div className='col-12 col-lg-8 left-panel'>
+                    <div className={`col-12 col-lg-8 left-panel  ${hide ? 'login-hide': ''}`}>
                         <div className="login-equalizer">
                             <p className="login-welcome-text">Hello!</p>
                             <p className="login-text-under">we would like to get you know better</p>
@@ -31,11 +37,11 @@ function RegisterPanel() {
                             <p className="login-team-text">~Dld team</p>
                         </div>
                     </div>
-                    <div className={`col-12 col-lg-4 right-panel register-right-panel`}>
+                    <div className={`col-12 col-lg-4 right-panel ${hide ? 'login-hide': ''} ${show ? 'login-loaded': ''}`}>
                         <img src="/logo/logo.png" alt="LogoDLD" className="logo-login" />
                         <div className="login-welcome-wrapper">
                             <p className="login-header">Sign up</p>
-                            <p className="login-text">Already have account? <a href="#" onClick={redirectRegister}>return</a></p>
+                            <p className="login-text">Already have account? <a href="#" onClick={(e) => {e.preventDefault(); redirectRegister();}}>return</a></p>
                         </div>
                         <form>
                             <div className="login-input-wrapper">

@@ -4,16 +4,20 @@ import '../../scss/pages/home-pages.scss'
 function LoginPanel() {
     const navigate = useNavigate();
     const [show, setShow] = useState(false);
+    const [hide, setHide] = useState(false);
     const [showOverflow, setShowOverflow] = useState(false);
     useEffect(() => {
         setShow(true);
-        const timer = setTimeout(() => {
+        setTimeout(() => {
         setShowOverflow(true);
         }, 500);
     }, []);
 
     function redirectRegister() {
-        navigate("/register");
+        setHide(true);
+        setTimeout(() => {
+            navigate("/register");
+        }, 1000);
     }
 
   return (
@@ -21,7 +25,7 @@ function LoginPanel() {
         <div className='container login-container'>
             <div className='row'>
                 <div className={`login-row-wrapper ${showOverflow ? 'login-loaded': ''}`}>
-                    <div className='col-12 col-lg-8 left-panel'>
+                    <div className={`col-12 col-lg-8 left-panel ${hide ? 'login-hide': ''}`}>
                         <div className="login-equalizer">
                             <p className="login-welcome-text">Welcome back</p>
                             <p className="login-text-under">we appreciate your choice</p>
@@ -30,11 +34,11 @@ function LoginPanel() {
                             <p className="login-team-text">~Dld team</p>
                         </div>
                     </div>
-                    <div className={`col-12 col-lg-4 right-panel ${show ? 'login-loaded': ''}`}>
+                    <div className={`col-12 col-lg-4 right-panel ${hide ? 'login-hide': ''} ${show ? 'login-loaded': ''}`}>
                         <img src="/logo/logo.png" alt="LogoDLD" className="logo-login" />
                         <div className="login-welcome-wrapper">
                             <p className="login-header">Please sign in</p>
-                            <p className="login-text">Don't have account? <a href='' onClick={redirectRegister}>sign up</a></p>
+                            <p className="login-text">Don't have account? <a href='' onClick={ (e) =>{e.preventDefault(); redirectRegister();}}>sign up</a></p>
                         </div>
                         <form>
                             <div className="login-input-wrapper">
