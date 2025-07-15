@@ -1,0 +1,11 @@
+#root{
+    .App{
+        #home-page{
+            opacity: 0;
+            transition: all 0.3s;
+            &.home-opacity{
+                opacity: 1;
+            }
+        }
+    }
+}
