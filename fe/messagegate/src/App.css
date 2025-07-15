@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Poetsen One';
+  src: url("../public/fonts/PoetsenOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; 
+  font-display: swap;
+}
+#root{
+    font-family: 'Poetsen One', sans-serif;
+}
+.preloader {
+    background-image: linear-gradient(-135deg, #FFD5FB, #C272FF, #8E32D4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    z-index: 9999;
+    pointer-events: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.preloader.fade-in {
+    opacity: 1;
+    pointer-events: all;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.preloader.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.preloader .logo-preloader {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    animation: iconPulse 1.5s infinite ease-in-out;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

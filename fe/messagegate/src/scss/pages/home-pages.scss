@@ -1,0 +1,233 @@
+$base-gradient: linear-gradient(-135deg,#FFD5FB, #C272FF, #8E32D4);
+$header-font-size: 46px;
+$header-font-small: 35px;
+$padding-login-page: 50px 20px 300px 20px;
+#root{
+    .App{
+        #login-page{
+            opacity: 0;
+            transition: all 0.3s;
+            &.login-opacity{
+                opacity: 1;
+            }
+            .container{
+                height: 100vh;
+                &.login-container{
+                    @media (max-width:1200px) {
+                        margin: 0px;
+                        width: 100%;
+                        max-width: unset;
+                    }
+                }
+                @media (max-width:991px) {
+                    max-height: 100dvh;
+                }
+                .row{
+                    height: 100vh;
+                    @media (max-width:991px) {
+                        max-height: 100dvh;
+                    }
+                    .login-row-wrapper{
+                        display: flex;
+                        padding: 0px;
+                        overflow: hidden;
+                        position: relative;
+                        opacity: 0;
+                        transition: all 1s;
+                        &.login-loaded{
+                            opacity: 1;
+                        }
+                        
+                        .greetings,.right-panel{
+                            height: 100%;
+                        }
+                        .left-panel{
+                            padding: $padding-login-page;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            opacity: 1;
+                            transition: all 1s;
+                            @media (max-width:991px) {
+                                display: none;
+                            }
+                            &.login-hide{
+                                opacity: 0;
+                            }
+                            .login-equalizer{
+                                margin-top: 100px;
+                                .login-welcome-text{
+                                    font-size: $header-font-size;
+                                    color: #000;
+                                    margin: 0px;
+                                    line-height: 40px;
+                                    @media (max-width:1100px) {
+                                        font-size: $header-font-small;
+                                    }
+                                }
+                                .login-text-under{
+                                    font-size: 20px;
+                                    color: #000;
+                                }
+                            }
+                            .login-team-text{
+                                color: #CCCCCC;
+                                font-size: 20px;
+                            }
+                        }
+                        .right-panel{
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            height: 100%;
+                            right: -100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            background-image: $base-gradient;
+                            padding: $padding-login-page;
+                            transition: all 1.5s;
+                            &.login-loaded {
+                                right: 0;
+                            }
+                            &.login-loaded.login-hide {
+                                right: -100%;
+
+                                @media (max-width: 991px) {
+                                right: 0;
+                                }
+                            }
+                            @media (max-width:991px) {
+                                padding: 50px 30px 150px 30px;
+                                right: 0px;
+                                opacity: 0;
+                                &.register-right-panel{
+                                    opacity: 1;
+                                }
+                                &.login-loaded{
+                                    opacity: 1;
+                                }
+                            }
+                            .login-welcome-wrapper{
+                                width: 300px;
+                                max-width: 95%;
+                                align-self: center;
+                                .login-header{
+                                    text-align: left;
+                                    color: white;
+                                    font-size: $header-font-size;
+                                    margin: 0px;
+                                    line-height: 40px;
+                                    @media (max-width:1100px) {
+                                        font-size: $header-font-small;
+                                    }
+                                }
+                                .login-text{
+                                    text-align: left;
+                                    color: white;
+                                    font-size: 20px;
+                                    @media (max-width:370px) {
+                                        font-size: 16px;
+                                    }
+                                    a{
+                                        color: white;
+                                    }
+                                }
+                            }
+                            .logo-login{
+                                width: 100px;
+                                height: auto;
+                                margin: 0 auto;
+                            }
+                            form{
+                                height: 100%;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: end;
+                                gap: 50px;
+                                .login-input-wrapper{
+                                    display: flex;
+                                    position: relative;
+                                    width: 300px;
+                                    max-width: 95%;
+                                    align-self: center;
+                                    .eye-line{
+                                         opacity: 0;   
+                                    }
+                                    &.icon-eye-crossed{
+                                        .eye-line{
+                                            position: absolute;
+                                            opacity: 1;
+                                            width: 28px;
+                                            height: 2px;
+                                            background-color: white;
+                                            right: 5px;
+                                            top: 60%;
+                                            transform: translateY(50%);
+                                            transform: rotate(-45deg);
+                                        }
+                                    }
+                                    .login-icon{
+                                        width: 30px;
+                                        height: auto;
+                                    }
+                                    .login-icon-eye{
+                                        position: absolute;
+                                        right: 0px;
+                                        width: 40px;
+                                        height: auto;
+                                        &.icon-eye-crossed{
+                                            
+                                            width: 100px;
+                                        }
+                                    }
+                                    .login-input{
+                                        width: 100%;
+                                        color: white;
+                                        background-color: unset;
+                                        border: none;
+                                        &:focus-visible{
+                                            border: none;
+                                            outline: none;
+                                        }
+                                        &::placeholder{
+                                            color: white;
+                                        }
+                                    }
+                                    &::before{
+                                        content: "";
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 2px;
+                                        background-color: white;
+                                        bottom: -5px;
+                                        left: 0;
+                                    }
+                                }
+                                .login-button-wrapper{
+                                    width: 300px;
+                                    max-width: 95%;
+                                    align-self: center;
+                                    .login-button{
+                                        border: none;
+                                        width: 100%;
+                                        background-color: white;
+                                        border-radius: 50px;
+                                        height: 50px;
+                                        .login-button-text{
+                                            margin: 0;
+                                            font-size: 24px;
+                                            background: $base-gradient;
+                                            -webkit-background-clip: text;
+                                            -webkit-text-fill-color: transparent;
+                                        } 
+                                    }
+                                }
+                            } 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

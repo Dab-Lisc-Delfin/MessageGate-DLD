@@ -1,0 +1,238 @@
+#root .App #login-page {
+  opacity: 0;
+  transition: all 0.3s;
+}
+#root .App #login-page.login-opacity {
+  opacity: 1;
+}
+#root .App #login-page .container {
+  height: 100vh;
+}
+@media (max-width: 1200px) {
+  #root .App #login-page .container.login-container {
+    margin: 0px;
+    width: 100%;
+    max-width: unset;
+  }
+}
+@media (max-width: 991px) {
+  #root .App #login-page .container {
+    max-height: 100dvh;
+  }
+}
+#root .App #login-page .container .row {
+  height: 100vh;
+}
+@media (max-width: 991px) {
+  #root .App #login-page .container .row {
+    max-height: 100dvh;
+  }
+}
+#root .App #login-page .container .row .login-row-wrapper {
+  display: flex;
+  padding: 0px;
+  overflow: hidden;
+  position: relative;
+  opacity: 0;
+  transition: all 1s;
+}
+#root .App #login-page .container .row .login-row-wrapper.login-loaded {
+  opacity: 1;
+}
+#root .App #login-page .container .row .login-row-wrapper .greetings, #root .App #login-page .container .row .login-row-wrapper .right-panel {
+  height: 100%;
+}
+#root .App #login-page .container .row .login-row-wrapper .left-panel {
+  padding: 50px 20px 300px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 1;
+  transition: all 1s;
+}
+@media (max-width: 991px) {
+  #root .App #login-page .container .row .login-row-wrapper .left-panel {
+    display: none;
+  }
+}
+#root .App #login-page .container .row .login-row-wrapper .left-panel.login-hide {
+  opacity: 0;
+}
+#root .App #login-page .container .row .login-row-wrapper .left-panel .login-equalizer {
+  margin-top: 100px;
+}
+#root .App #login-page .container .row .login-row-wrapper .left-panel .login-equalizer .login-welcome-text {
+  font-size: 46px;
+  color: #000;
+  margin: 0px;
+  line-height: 40px;
+}
+@media (max-width: 1100px) {
+  #root .App #login-page .container .row .login-row-wrapper .left-panel .login-equalizer .login-welcome-text {
+    font-size: 35px;
+  }
+}
+#root .App #login-page .container .row .login-row-wrapper .left-panel .login-equalizer .login-text-under {
+  font-size: 20px;
+  color: #000;
+}
+#root .App #login-page .container .row .login-row-wrapper .left-panel .login-team-text {
+  color: #CCCCCC;
+  font-size: 20px;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  right: -100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: linear-gradient(-135deg, #FFD5FB, #C272FF, #8E32D4);
+  padding: 50px 20px 300px 20px;
+  transition: all 1.5s;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel.login-loaded {
+  right: 0;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel.login-loaded.login-hide {
+  right: -100%;
+}
+@media (max-width: 991px) {
+  #root .App #login-page .container .row .login-row-wrapper .right-panel.login-loaded.login-hide {
+    right: 0;
+  }
+}
+@media (max-width: 991px) {
+  #root .App #login-page .container .row .login-row-wrapper .right-panel {
+    padding: 50px 30px 150px 30px;
+    right: 0px;
+    opacity: 0;
+  }
+  #root .App #login-page .container .row .login-row-wrapper .right-panel.register-right-panel {
+    opacity: 1;
+  }
+  #root .App #login-page .container .row .login-row-wrapper .right-panel.login-loaded {
+    opacity: 1;
+  }
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel .login-welcome-wrapper {
+  width: 300px;
+  max-width: 95%;
+  align-self: center;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel .login-welcome-wrapper .login-header {
+  text-align: left;
+  color: white;
+  font-size: 46px;
+  margin: 0px;
+  line-height: 40px;
+}
+@media (max-width: 1100px) {
+  #root .App #login-page .container .row .login-row-wrapper .right-panel .login-welcome-wrapper .login-header {
+    font-size: 35px;
+  }
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel .login-welcome-wrapper .login-text {
+  text-align: left;
+  color: white;
+  font-size: 20px;
+}
+@media (max-width: 370px) {
+  #root .App #login-page .container .row .login-row-wrapper .right-panel .login-welcome-wrapper .login-text {
+    font-size: 16px;
+  }
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel .login-welcome-wrapper .login-text a {
+  color: white;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel .logo-login {
+  width: 100px;
+  height: auto;
+  margin: 0 auto;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 50px;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper {
+  display: flex;
+  position: relative;
+  width: 300px;
+  max-width: 95%;
+  align-self: center;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper .eye-line {
+  opacity: 0;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper.icon-eye-crossed .eye-line {
+  position: absolute;
+  opacity: 1;
+  width: 28px;
+  height: 2px;
+  background-color: white;
+  right: 5px;
+  top: 60%;
+  transform: translateY(50%);
+  transform: rotate(-45deg);
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper .login-icon {
+  width: 30px;
+  height: auto;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper .login-icon-eye {
+  position: absolute;
+  right: 0px;
+  width: 40px;
+  height: auto;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper .login-icon-eye.icon-eye-crossed {
+  width: 100px;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper .login-input {
+  width: 100%;
+  color: white;
+  background-color: unset;
+  border: none;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper .login-input:focus-visible {
+  border: none;
+  outline: none;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper .login-input::placeholder {
+  color: white;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  bottom: -5px;
+  left: 0;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-button-wrapper {
+  width: 300px;
+  max-width: 95%;
+  align-self: center;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-button-wrapper .login-button {
+  border: none;
+  width: 100%;
+  background-color: white;
+  border-radius: 50px;
+  height: 50px;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-button-wrapper .login-button .login-button-text {
+  margin: 0;
+  font-size: 24px;
+  background: linear-gradient(-135deg, #FFD5FB, #C272FF, #8E32D4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*# sourceMappingURL=home-pages.css.map */
