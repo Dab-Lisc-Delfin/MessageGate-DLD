@@ -1,27 +1,56 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import '../../scss/pages/home-pages.scss'
+
 function LoginPanel() {
     const navigate = useNavigate();
+    const [cssLoaded, setCssLoaded] = useState(false);
     const [show, setShow] = useState(false);
     const [hide, setHide] = useState(false);
     const [showOverflow, setShowOverflow] = useState(false);
+
     useEffect(() => {
-        setShow(true);
-        setTimeout(() => {
-        setShowOverflow(true);
-        }, 500);
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/css/pages/home-pages.css';
+        link.media = 'print';
+
+        link.onload = () => {
+            link.media = 'all';
+            setTimeout(() =>{
+                setCssLoaded(true);
+            }, 1000);
+        };
+
+        document.head.appendChild(link);
+
+        return () => {
+            document.head.removeChild(link);
+        };
     }, []);
+
+    useEffect(() => {
+        if (cssLoaded) {
+            setShow(true);
+            setTimeout(() => {
+                setShowOverflow(true);
+            }, 500);
+        }
+    }, [cssLoaded]);
 
     function redirectRegister() {
         setHide(true);
+        setShow(false);
         setTimeout(() => {
             navigate("/register");
         }, 1000);
     }
 
   return (
-    <section id="login-page">
+    <>
+    <section className={`preloader ${show ? 'fade-out' : 'fade-in'}`}>
+        <img src="/logo/logo.png" alt="LogoDLD" className="logo-preloader" />
+    </section>
+    <section id="login-page"className={`${show ? 'login-opacity' : ''}`}>
         <div className='container login-container'>
             <div className='row'>
                 <div className={`login-row-wrapper ${showOverflow ? 'login-loaded': ''}`}>
@@ -34,7 +63,7 @@ function LoginPanel() {
                             <p className="login-team-text">~Dld team</p>
                         </div>
                     </div>
-                    <div className={`col-12 col-lg-4 right-panel ${hide ? 'login-hide': ''} ${show ? 'login-loaded': ''}`}>
+                    <div className={`col-12 col-lg-4 right-panel ${show ? 'login-loaded' : ''} ${hide ? 'login-hide' : ''}`}>
                         <img src="/logo/logo.png" alt="LogoDLD" className="logo-login" />
                         <div className="login-welcome-wrapper">
                             <p className="login-header">Please sign in</p>
@@ -58,6 +87,8 @@ function LoginPanel() {
             </div>
         </div>
     </section>
+    </>
+    
   );
 }
 

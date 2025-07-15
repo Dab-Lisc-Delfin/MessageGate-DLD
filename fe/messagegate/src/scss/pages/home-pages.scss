@@ -2,17 +2,14 @@ $base-gradient: linear-gradient(-135deg,#FFD5FB, #C272FF, #8E32D4);
 $header-font-size: 46px;
 $header-font-small: 35px;
 $padding-login-page: 50px 20px 300px 20px;
-@font-face {
-  font-family: 'Poetsen One';
-  src: url('../../../src/assets/fonts/PoetsenOne-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal; 
-  font-display: swap;
-}
 #root{
-    font-family: 'Poetsen One', sans-serif;
     .App{
         #login-page{
+            opacity: 0;
+            transition: all 0.3s;
+            &.login-opacity{
+                opacity: 1;
+            }
             .container{
                 height: 100vh;
                 &.login-container{
@@ -80,6 +77,9 @@ $padding-login-page: 50px 20px 300px 20px;
                         }
                         .right-panel{
                             position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            height: 100%;
                             right: -100%;
                             display: flex;
                             flex-direction: column;
@@ -87,13 +87,14 @@ $padding-login-page: 50px 20px 300px 20px;
                             background-image: $base-gradient;
                             padding: $padding-login-page;
                             transition: all 1.5s;
-                            &.login-loaded{
-                                right: 0px;
+                            &.login-loaded {
+                                right: 0;
                             }
-                            &.login-hide{
+                            &.login-loaded.login-hide {
                                 right: -100%;
-                                @media (max-width:991px) {
-                                    right: 0px;
+
+                                @media (max-width: 991px) {
+                                right: 0;
                                 }
                             }
                             @media (max-width:991px) {
