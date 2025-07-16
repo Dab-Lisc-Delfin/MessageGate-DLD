@@ -68,6 +68,28 @@ $headerHeight: 60px;
                     margin-top: 20px;
                     height: 100%;
                     position: relative;
+                    .ErrorTo{
+                        position: absolute;
+                        width: fit-content;
+                        height: auto;
+                        top: 82px;
+                        left: 30px;
+                        border-radius: 20px;
+                        opacity: 0;
+                        transition: all 0.5s;
+                        .ErrorToText{
+                            font-size: 10px;
+                            line-height: 10px;
+                            margin: 0;
+                            color: red;
+                        }
+                        &.showErrorTo{
+                            opacity: 1;
+                        }
+                        &.ErrorFrom{
+                            top: 38px;
+                        }
+                    }
                     .send-button{
                         position: absolute;
                         right: 10px;
@@ -105,7 +127,7 @@ $headerHeight: 60px;
                         border: none;
                         color: white;
                         background-color: #ccc;
-                        margin: 5px 10px;
+                        margin: 7px 10px;
                         padding: 0px 20px;
                         box-sizing: border-box;
                         border-radius: 8px;
@@ -222,9 +244,10 @@ $headerHeight: 60px;
                                             padding: 5px 10px ;
                                             font-size: 16px;
                                             line-height: 16px;
-                                            background: $base-gradient;
-                                            -webkit-background-clip: text;
-                                            -webkit-text-fill-color: transparent;
+                                            color: #000;
+                                            // background: $base-gradient;
+                                            // -webkit-background-clip: text;
+                                            // -webkit-text-fill-color: transparent;
                                         }
                                     }
                                 }

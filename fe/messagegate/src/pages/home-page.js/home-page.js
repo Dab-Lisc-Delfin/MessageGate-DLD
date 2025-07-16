@@ -9,6 +9,10 @@ function HomePage(){
     const [user, setUser] = useState('user');
     const [type, setType] = useState('');
     const [showModal, setShowModal] = useState(false);
+    const [from, setFrom] = useState('user');
+    const [to, setTo] = useState('');
+    const [errorFrom, setErrorFrom] = useState('');
+    const [errorTo, setErrorTo] = useState('');
     useEffect(() => {
         // if( !isLoggedIn){
         //     navigate("/");
@@ -53,6 +57,8 @@ function HomePage(){
     }
     function submitSend(e){
         e.preventDefault();
+        if(from == ''){ setErrorFrom(true); }
+        if(to == ''){ setErrorTo(true); }
         console.log('it works!');
     }
     return(
@@ -69,8 +75,14 @@ function HomePage(){
                         <p onClick={HideModal} className='absolute-close-modal'>X</p>
                     </div>
                     <form method='post' onSubmit={submitSend} className='modal-form'>
-                        <input placeholder='from'/>
-                        <input placeholder='to'/>
+                        <input placeholder='from'name='from' onChange={(e)=>{ const value = e.target.value; setFrom(value);if (value.trim() !== '') { setErrorFrom(false); }}} value={from}/>
+                        <div className={`ErrorTo ErrorFrom ${errorFrom ? 'showErrorTo' : ''}`}>
+                            <p className='ErrorToText'>From can't be empty</p>
+                        </div>
+                        <input placeholder='to'name='to'onChange={(e)=>{const value = e.target.value; setTo(value);if (value.trim() !== '') { setErrorTo(false); }}} value={to}/>
+                        <div className={`ErrorTo ${errorTo ? 'showErrorTo' : ''}`}>
+                            <p className='ErrorToText'>To can't be empty</p>
+                        </div>
                         <textarea></textarea>
                         <button type='submit' className='send-button'><p className='send-button-text'>Send</p></button>
                     </form>

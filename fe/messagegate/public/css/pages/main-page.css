@@ -68,6 +68,28 @@
   height: 100%;
   position: relative;
 }
+#root .App .section-home-modal .modal-input-home .modal-form .ErrorTo {
+  position: absolute;
+  width: fit-content;
+  height: auto;
+  top: 82px;
+  left: 30px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+#root .App .section-home-modal .modal-input-home .modal-form .ErrorTo .ErrorToText {
+  font-size: 10px;
+  line-height: 10px;
+  margin: 0;
+  color: red;
+}
+#root .App .section-home-modal .modal-input-home .modal-form .ErrorTo.showErrorTo {
+  opacity: 1;
+}
+#root .App .section-home-modal .modal-input-home .modal-form .ErrorTo.ErrorFrom {
+  top: 38px;
+}
 #root .App .section-home-modal .modal-input-home .modal-form .send-button {
   position: absolute;
   right: 10px;
@@ -105,7 +127,7 @@
   border: none;
   color: white;
   background-color: #ccc;
-  margin: 5px 10px;
+  margin: 7px 10px;
   padding: 0px 20px;
   box-sizing: border-box;
   border-radius: 8px;
@@ -233,9 +255,7 @@
   padding: 5px 10px;
   font-size: 16px;
   line-height: 16px;
-  background: linear-gradient(-178deg, #FFD5FB, #C272FF, #8E32D4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #000;
 }
 #root .App #home-page header {
   position: absolute;
