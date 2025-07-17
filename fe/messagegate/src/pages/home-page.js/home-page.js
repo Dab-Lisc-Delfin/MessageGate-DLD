@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import HomeModal from '../../components/home-modal';
+import HomeTiles from '../../components/home-tiles';
+import History from '../../components/history';
 
 function HomePage(){
     const navigate = useNavigate();
@@ -13,6 +16,20 @@ function HomePage(){
     const [to, setTo] = useState('');
     const [errorFrom, setErrorFrom] = useState('');
     const [errorTo, setErrorTo] = useState('');
+    const [menu, setMenu] = useState(false);
+    const menuOptions = ['Home', 'History'];
+    const [fadeOut, setFadeOut] = useState(false);
+    const [currentPage, setCurrentPage] = useState('HomeFirstLoad');
+    function LogOut(){ setMenu(false); setShow(false); setTimeout(() =>{ setIsLoggedIn(false); navigate("/"); }, 1000); };
+    function showComposeModal(value){ setShowModal(true); setType(value); };
+    function HideModal(){ setShowModal(false); };
+    useEffect(() => { if (cssLoaded) { setShow(true); if(window.innerWidth > 991) setMenu(true); } }, [cssLoaded]);
+    const ListItems = menuOptions.map((option) =>{
+        return(
+            <ol onClick={()=> {NavigateMenu(`${option}`)}} key={option} className={`${option} ${(option === currentPage || (option === 'Home' && currentPage === 'HomeFirstLoad')) ? 'current' : ''}`}>{option}</ol>
+        );
+    });
+
     useEffect(() => {
         // if( !isLoggedIn){
         //     navigate("/");
@@ -29,65 +46,44 @@ function HomePage(){
             }, 1000);
             // setCssLoaded(true);
         };
-
         document.head.appendChild(link);
 
         return () => {
             document.head.removeChild(link);
         };
     }, []);
-    useEffect(() => {
-        if (cssLoaded) {
-            setShow(true);
+
+    
+
+    function NavigateMenu(link){
+        if(link !== currentPage){
+            setFadeOut(true);
+            setTimeout(()=>{
+                setCurrentPage(link);
+                setFadeOut(false);
+            }, 300);
+            
         }
-    }, [cssLoaded]);
-    function LogOut(){
-        setShow(false);
-        setTimeout(() =>{
-            setIsLoggedIn(false);
-            navigate("/");
-        }, 1000);
     }
-    function showComposeModal(value){
-        setShowModal(true);
-        setType(value);
-    }
-    function HideModal(){
-        setShowModal(false);
-    }
+
     function submitSend(e){
         e.preventDefault();
-        if(from == ''){ setErrorFrom(true); }
-        if(to == ''){ setErrorTo(true); }
+        if(from === ''){ setErrorFrom(true); }
+        if(to === ''){ setErrorTo(true); }
         console.log('it works!');
     }
+
     return(
         <>
             <section className={`preloader ${show ? 'fade-out' : 'fade-in'}`}>
                 <img src="/logo/logo.png" alt="LogoDLD" className="logo-preloader" />
             </section>
-            <section className={`section-home-modal ${show ? 'display-modal' : ''} ${showModal ? 'show' : ''}`}>
-                <div onClick={HideModal} className='modal-background-home'></div>
-                <div className='modal-input-home'>
-                    <div className="header-modal">
-                        <img src="/logo/logo.png" alt="LogoDLD" className="logo-login-modal" />
-                        <p>Send {type}</p>
-                        <p onClick={HideModal} className='absolute-close-modal'>X</p>
-                    </div>
-                    <form method='post' onSubmit={submitSend} className='modal-form'>
-                        <input placeholder='from'name='from' onChange={(e)=>{ const value = e.target.value; setFrom(value);if (value.trim() !== '') { setErrorFrom(false); }}} value={from}/>
-                        <div className={`ErrorTo ErrorFrom ${errorFrom ? 'showErrorTo' : ''}`}>
-                            <p className='ErrorToText'>From can't be empty</p>
-                        </div>
-                        <input placeholder='to'name='to'onChange={(e)=>{const value = e.target.value; setTo(value);if (value.trim() !== '') { setErrorTo(false); }}} value={to}/>
-                        <div className={`ErrorTo ${errorTo ? 'showErrorTo' : ''}`}>
-                            <p className='ErrorToText'>To can't be empty</p>
-                        </div>
-                        <textarea></textarea>
-                        <button type='submit' className='send-button'><p className='send-button-text'>Send</p></button>
-                    </form>
-                </div>
+            <section className={`menu-home ${menu ? 'fade-in' : 'fade-out'}`}>
+                <ul>{ListItems}</ul>
+                <button className='header-logout-button' onClick={LogOut}>Logout</button>
             </section>
+            {(currentPage === 'Home' || currentPage === 'HomeFirstLoad') && <HomeModal currentPage={currentPage} show={show} showModal={showModal} submitSend={submitSend} HideModal={HideModal} type={type} from={from} setFrom={setFrom} errorFrom={errorFrom} setErrorFrom={setErrorFrom} to={to} setTo={setTo} errorTo={errorTo} setErrorTo={setErrorTo} />}
+            
             <section id="home-page"className={`${show ? 'home-opacity' : ''}`}>
                 <header className={`${show ? 'slide-in' : 'slide-out'}`}>
                     <div className='container container-header-home'>
@@ -95,32 +91,12 @@ function HomePage(){
                             <img src="/logo/logo.png" alt="LogoDLD" className="logo-login" />
                             <p className='header-home-text'>Welcome back, {user}!</p>
                         </div>
-                        <button className='header-logout-button' onClick={LogOut}>Logout</button>
+                        
                     </div>
                 </header>
-                <div className='container container-home-tiles'>
-                    <div className='row row-home'>
-                        <div className='col-12 col-lg-6 tile-container'>
-                            <div className={`tile-home first ${show ? 'slide-in' : 'slide-out'}`}>
-                                <p className='tile-heading'>Send email</p>
-                                <div className='send-desc'>
-                                    <p className='desc-text-home'>- Send a message directly to the recipient's email inbox.</p>
-                                    <p className='desc-text-home'>- Write and send an email in just a few clicks.</p>
-                                    <button onClick={()=>{showComposeModal('email')}} className='home-compose-button'>Compose</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='col-12 col-lg-6 tile-container'>
-                            <div className={`tile-home second ${show ? 'slide-in' : 'slide-out'}`}>
-                                <p className='tile-heading'>Send sms</p>
-                                <div className='send-desc'>
-                                    <p className='desc-text-home'>- Quickly send a short text message to any phone number.</p>
-                                    <p className='desc-text-home'>- Perfect for instant and brief communication.</p>
-                                    <button onClick={()=>{showComposeModal('sms')}} className='home-compose-button'>Compose</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div className={`home-tiles-wrapper ${fadeOut ? 'fade-out' : ''}`}>
+                    {(currentPage === 'Home' || currentPage === 'HomeFirstLoad') && <HomeTiles showComposeModal={showComposeModal} show={show}/>}
+                    {currentPage === 'History' && <History/>}
                 </div>
             </section>
         </>
