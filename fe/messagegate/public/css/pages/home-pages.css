@@ -169,6 +169,25 @@
 #root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper .eye-line {
   opacity: 0;
 }
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper .ErrorUsername {
+  position: absolute;
+  width: fit-content;
+  height: auto;
+  top: -15px;
+  left: 30px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper .ErrorUsername .userNameErrorText {
+  font-size: 12px;
+  line-height: 10px;
+  margin: 0;
+  color: red;
+}
+#root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper .ErrorUsername.showErrorUsername {
+  opacity: 1;
+}
 #root .App #login-page .container .row .login-row-wrapper .right-panel form .login-input-wrapper.icon-eye-crossed .eye-line {
   position: absolute;
   opacity: 1;

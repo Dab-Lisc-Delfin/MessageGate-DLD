@@ -7,6 +7,8 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
     "bootstrap": "^5.3.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -19,8 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "scss:watch": "sass --watch src/scss/pages/home-pages.scss:public/css/pages/home-pages.css",
-    "scss": "sass src/scss/pages/home-pages.scss public/css/pages/home-pages.css"
+    "scss:watch": "sass --watch src/scss/pages/home-pages.scss:public/css/pages/home-pages.css src/scss/pages/main-page.scss:public/css/pages/main-page.css",
+    "scss": "sass src/scss/pages/home-pages.scss:public/css/pages/home-pages.css src/scss/pages/main-page.scss:public/css/pages/main-page.css"
   },
   "eslintConfig": {
     "extends": [
