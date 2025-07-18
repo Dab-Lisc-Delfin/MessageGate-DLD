@@ -179,6 +179,61 @@
 #root .App .section-home-modal .modal-input-home .modal-form textarea:focus-visible {
   outline: none;
 }
+#root .App .section-home-modal .modal-input-home .modal-form img {
+  position: absolute;
+  width: 26px;
+  height: auto;
+  right: 20px;
+  top: 53px;
+  transform: rotate(180deg);
+  transition: all 1s;
+  cursor: pointer;
+}
+#root .App .section-home-modal .modal-input-home .modal-form img.is-active {
+  transform: rotate(0deg);
+}
+#root .App .section-home-modal .modal-input-home .modal-form .recent {
+  position: absolute;
+  top: 75px;
+  max-height: 0px;
+  overflow-y: hidden;
+  left: 10px;
+  width: calc(100% - 20px);
+  transition: all 1s;
+  opacity: 0;
+  background-color: #ccc;
+  color: #fff;
+  border: 1px solid black;
+  border-radius: 0 0 8px 8px;
+  border-top: none;
+}
+#root .App .section-home-modal .modal-input-home .modal-form .recent.is-active {
+  overflow-y: auto;
+  opacity: 1;
+  max-height: 200px;
+}
+#root .App .section-home-modal .modal-input-home .modal-form .recent::-webkit-scrollbar {
+  display: none;
+}
+#root .App .section-home-modal .modal-input-home .modal-form .recent ul {
+  padding: 0px;
+  list-style-type: none;
+  width: 100%;
+  height: 200px;
+  top: 0px;
+}
+#root .App .section-home-modal .modal-input-home .modal-form .recent ul li {
+  border-bottom: 1px solid #000;
+  cursor: pointer;
+}
+#root .App .section-home-modal .modal-input-home .modal-form .recent ul li:first-child {
+  border-top: 1px solid #000;
+  margin-top: 5px;
+}
+#root .App .section-home-modal .modal-input-home .modal-form .recent ul li p {
+  padding: 5px 20px;
+  margin: 0;
+}
 #root .App .section-home-modal .modal-input-home .modal-form input {
   width: calc(100% - 20px);
   height: 30px;
@@ -189,6 +244,11 @@
   padding: 0px 20px;
   box-sizing: border-box;
   border-radius: 8px;
+  transition: all 1s;
+}
+#root .App .section-home-modal .modal-input-home .modal-form input.is-active {
+  border: 1px solid #000;
+  border-bottom: none;
 }
 #root .App .section-home-modal .modal-input-home .modal-form input::placeholder {
   color: white;
@@ -223,6 +283,107 @@
   top: 60px;
   left: 50%;
   transform: translateX(-50%);
+}
+#root .App #home-page .home-tiles-wrapper .container.History-section .row {
+  padding: 20px 0px;
+  height: calc(100vh - 60px);
+  display: block;
+}
+@media (max-width: 500px) {
+  #root .App #home-page .home-tiles-wrapper .container.History-section .row {
+    height: calc(100svh - 60px);
+  }
+}
+#root .App #home-page .home-tiles-wrapper .container.History-section .row .select {
+  width: 800px;
+  max-width: 95%;
+  height: auto;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 0px;
+}
+#root .App #home-page .home-tiles-wrapper .container.History-section .row .select select {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: linear-gradient(-178deg, #FFD5FB, #C272FF, #8E32D4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 5px;
+  outline: none;
+}
+#root .App #home-page .home-tiles-wrapper .container.History-section .row ul {
+  margin: auto;
+  list-style-type: none;
+  width: 800px;
+  max-width: 95%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0px;
+  height: calc(100% - 33px);
+  overflow-y: auto;
+}
+@media (max-width: 500px) {
+  #root .App #home-page .home-tiles-wrapper .container.History-section .row ul {
+    height: 80svh;
+  }
+}
+#root .App #home-page .home-tiles-wrapper .container.History-section .row ul::-webkit-scrollbar {
+  display: none;
+}
+#root .App #home-page .home-tiles-wrapper .container.History-section .row ul li {
+  padding: 5px 0px;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+}
+#root .App #home-page .home-tiles-wrapper .container.History-section .row ul li .d-flex {
+  padding: 0px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  #root .App #home-page .home-tiles-wrapper .container.History-section .row ul li .d-flex {
+    display: block !important;
+  }
+}
+#root .App #home-page .home-tiles-wrapper .container.History-section .row ul li .d-flex p {
+  margin: 0;
+  font-size: 12px;
+  background: linear-gradient(-178deg, #FFD5FB, #C272FF, #8E32D4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#root .App #home-page .home-tiles-wrapper .container.History-section .row ul li .d-flex p span {
+  margin-right: 10px;
+}
+#root .App #home-page .home-tiles-wrapper .container.History-section .row ul li button {
+  color: white;
+  outline: none;
+  background-image: linear-gradient(-178deg, #FFD5FB, #C272FF, #8E32D4);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 2px 10px;
+  float: inline-end;
+  margin-right: 10px;
+}
+@media (max-width: 500px) {
+  #root .App #home-page .home-tiles-wrapper .container.History-section .row ul li button {
+    float: unset;
+    margin: 10px;
+  }
+}
+#root .App #home-page .home-tiles-wrapper .container.History-section .row ul li .content {
+  transition: all 0.5s;
+  max-height: 0;
+  padding: 0px 10px;
+  font-size: 14px;
+  margin: 10px 0px 0px;
+  opacity: 0;
+  pointer-events: none;
+  color: #ccc;
+}
+#root .App #home-page .home-tiles-wrapper .container.History-section .row ul li.is-active .content {
+  opacity: 1;
+  pointer-events: all;
 }
 #root .App #home-page .home-tiles-wrapper .container.container-home-tiles {
   position: absolute;

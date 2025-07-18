@@ -1,4 +1,4 @@
-function HomeTiles({show, showComposeModal}){
+function HomeTiles({show, showComposeModal, showSmsModal}){
     return(
         <div className='container container-home-tiles'>
             <div className='row row-home'>
@@ -18,7 +18,7 @@ function HomeTiles({show, showComposeModal}){
                         <div className='send-desc'>
                             <p className='desc-text-home'>- Quickly send a short text message to any phone number.</p>
                             <p className='desc-text-home'>- Perfect for instant and brief communication.</p>
-                            <button onClick={()=>{showComposeModal('sms')}} className='home-compose-button'>Compose</button>
+                            <button onClick={()=>{showSmsModal('sms')}} className='home-compose-button'>Compose</button>
                         </div>
                     </div>
                 </div>

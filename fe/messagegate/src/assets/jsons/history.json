@@ -1,0 +1,164 @@
+{
+  "history":[
+    {
+    "id": 1,
+    "from": "anna.kowalska@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Spotkanie projektowe",
+    "date": "2025-07-01T10:30:00Z",
+    "content": "Cześć Jan, czy możemy przesunąć spotkanie na środę o 14:00? Pozdrawiam, Anna"
+  },
+  {
+    "id": 2,
+    "from": "jan.nowak@example.com",
+    "to": "anna.kowalska@example.com",
+    "subject": "Re: Spotkanie projektowe",
+    "date": "2025-07-01T11:00:00Z",
+    "content": "Cześć Anna, jasne, środa 14:00 pasuje. Do zobaczenia!"
+  },
+  {
+    "id": 3,
+    "from": "piotr.zielinski@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Raport kwartalny",
+    "date": "2025-07-02T09:15:00Z",
+    "content": "Cześć Jan, przesyłam w załączniku raport kwartalny. Pozdrawiam, Piotr"
+  },
+  {
+    "id": 4,
+    "from": "kasia.wozniak@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Lunch w piątek",
+    "date": "2025-07-03T13:45:00Z",
+    "content": "Hej Jan, masz czas na lunch w piątek o 12:30?"
+  },
+  {
+    "id": 5,
+    "from": "michal.krawczyk@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Nowa oferta handlowa",
+    "date": "2025-07-04T16:20:00Z",
+    "content": "Dzień dobry, w załączniku przesyłam nową ofertę handlową naszej firmy."
+  },
+  {
+    "id": 6,
+    "from": "ewa.kaminska@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Zaproszenie na konferencję",
+    "date": "2025-07-05T09:50:00Z",
+    "content": "Szanowny Panie, zapraszamy na konferencję dotyczącą nowych technologii 20 lipca."
+  },
+  {
+    "id": 7,
+    "from": "tomasz.lewandowski@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Faktura za usługi",
+    "date": "2025-07-06T14:15:00Z",
+    "content": "Witam, przesyłam fakturę za wykonane usługi. Termin płatności 14 dni."
+  },
+  {
+    "id": 8,
+    "from": "alicja.mazur@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Podziękowania za spotkanie",
+    "date": "2025-07-07T18:30:00Z",
+    "content": "Dziękuję za wczorajsze spotkanie, było bardzo owocne. Pozdrawiam, Alicja"
+  },
+  {
+    "id": 9,
+    "from": "jan.nowak@example.com",
+    "to": "grzegorz.olszewski@example.com",
+    "subject": "Umowa partnerska",
+    "date": "2025-07-08T10:00:00Z",
+    "content": "Cześć Grzegorz, przesyłam wstępną wersję umowy partnerskiej do akceptacji."
+  },
+  {
+    "id": 10,
+    "from": "grzegorz.olszewski@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Re: Umowa partnerska",
+    "date": "2025-07-08T12:20:00Z",
+    "content": "Dziękuję za umowę, wprowadzę kilka poprawek i odeślę do końca tygodnia."
+  },
+  {
+    "id": 11,
+    "from": "barbara.jankowska@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Nowy projekt badawczy",
+    "date": "2025-07-09T09:40:00Z",
+    "content": "Cześć Jan, mamy propozycję wspólnego projektu badawczego, możemy porozmawiać w przyszłym tygodniu?"
+  },
+  {
+    "id": 12,
+    "from": "jan.nowak@example.com",
+    "to": "pawel.nowicki@example.com",
+    "subject": "Aktualizacja statusu projektu",
+    "date": "2025-07-10T11:30:00Z",
+    "content": "Hej Paweł, przesyłam najnowsze informacje o statusie projektu. Proszę o potwierdzenie."
+  },
+  {
+    "id": 13,
+    "from": "pawel.nowicki@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Re: Aktualizacja statusu projektu",
+    "date": "2025-07-10T12:10:00Z",
+    "content": "Cześć Jan, potwierdzam otrzymanie informacji, wszystko jasne."
+  },
+  {
+    "id": 14,
+    "from": "marek.adamski@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Prośba o rekomendację",
+    "date": "2025-07-11T15:00:00Z",
+    "content": "Cześć Jan, czy mógłbyś polecić mnie w projekcie XYZ? Z góry dziękuję!"
+  },
+  {
+    "id": 15,
+    "from": "jan.nowak@example.com",
+    "to": "anna.kowalska@example.com",
+    "subject": "Materiały do prezentacji",
+    "date": "2025-07-12T09:00:00Z",
+    "content": "Cześć Anna, przesyłam materiały do prezentacji, o które prosiłaś."
+  },
+  {
+    "id": 16,
+    "from": "lucyna.baran@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Współpraca marketingowa",
+    "date": "2025-07-13T14:40:00Z",
+    "content": "Dzień dobry, jesteśmy zainteresowani współpracą w zakresie marketingu. Prosimy o kontakt."
+  },
+  {
+    "id": 17,
+    "from": "jan.nowak@example.com",
+    "to": "ewa.kaminska@example.com",
+    "subject": "Re: Zaproszenie na konferencję",
+    "date": "2025-07-14T10:20:00Z",
+    "content": "Dziękuję za zaproszenie, potwierdzam swoją obecność na konferencji."
+  },
+  {
+    "id": 18,
+    "from": "piotr.zielinski@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Aktualizacja raportu",
+    "date": "2025-07-15T08:15:00Z",
+    "content": "Jan, wysyłam zaktualizowany raport z danymi za czerwiec. Pozdrawiam, Piotr"
+  },
+  {
+    "id": 19,
+    "from": "jan.nowak@example.com",
+    "to": "kasia.wozniak@example.com",
+    "subject": "Re: Lunch w piątek",
+    "date": "2025-07-16T11:10:00Z",
+    "content": "Hej Kasia, piątek 12:30 pasuje idealnie. Do zobaczenia!"
+  },
+  {
+    "id": 20,
+    "from": "karolina.sikora@example.com",
+    "to": "jan.nowak@example.com",
+    "subject": "Nowa propozycja współpracy",
+    "date": "2025-07-17T17:25:00Z",
+    "content": "Szanowny Panie, przesyłam propozycję współpracy dotyczącą nowego projektu."
+  }
+  ]
+}

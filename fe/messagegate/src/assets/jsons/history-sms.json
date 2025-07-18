@@ -1,0 +1,111 @@
+{
+ "content":[
+    {
+    "id": 1,
+    "from": "+48500111222",
+    "to": "+48500999888",
+    "date": "2025-07-10T08:15:00Z",
+    "content": "Hej, pamiętasz o spotkaniu o 15:00?"
+  },
+  {
+    "id": 2,
+    "from": "+48500999888",
+    "to": "+48500111222",
+    "date": "2025-07-10T08:20:00Z",
+    "content": "Tak, będę na pewno. Do zobaczenia!"
+  },
+  {
+    "id": 3,
+    "from": "+48500222333",
+    "to": "+48500111222",
+    "date": "2025-07-11T09:00:00Z",
+    "content": "Cześć, czy możesz podesłać mi raport z wczoraj?"
+  },
+  {
+    "id": 4,
+    "from": "+48500111222",
+    "to": "+48500222333",
+    "date": "2025-07-11T09:05:00Z",
+    "content": "Jasne, zaraz wyślę."
+  },
+  {
+    "id": 5,
+    "from": "+48500333444",
+    "to": "+48500111222",
+    "date": "2025-07-12T13:30:00Z",
+    "content": "Dziękuję za pomoc w organizacji imprezy."
+  },
+  {
+    "id": 6,
+    "from": "+48500111222",
+    "to": "+48500333444",
+    "date": "2025-07-12T13:45:00Z",
+    "content": "Nie ma sprawy, cieszę się, że wszystko poszło dobrze."
+  },
+  {
+    "id": 7,
+    "from": "+48500444555",
+    "to": "+48500111222",
+    "date": "2025-07-13T07:50:00Z",
+    "content": "Masz chwilę na rozmowę dzisiaj po południu?"
+  },
+  {
+    "id": 8,
+    "from": "+48500111222",
+    "to": "+48500444555",
+    "date": "2025-07-13T08:00:00Z",
+    "content": "Tak, możemy pogadać o 16:00."
+  },
+  {
+    "id": 9,
+    "from": "+48500555666",
+    "to": "+48500111222",
+    "date": "2025-07-14T10:10:00Z",
+    "content": "Przypomnienie: spotkanie z klientem jutro o 11:00."
+  },
+  {
+    "id": 10,
+    "from": "+48500111222",
+    "to": "+48500555666",
+    "date": "2025-07-14T10:15:00Z",
+    "content": "Dzięki za przypomnienie, będę punktualnie."
+  },
+  {
+    "id": 11,
+    "from": "+48500666777",
+    "to": "+48500111222",
+    "date": "2025-07-15T14:00:00Z",
+    "content": "Wysyłam Ci link do dokumentów, sprawdź je proszę."
+  },
+  {
+    "id": 12,
+    "from": "+48500111222",
+    "to": "+48500666777",
+    "date": "2025-07-15T14:10:00Z",
+    "content": "Dzięki, zaraz to sprawdzę."
+  },
+  {
+    "id": 13,
+    "from": "+48500777888",
+    "to": "+48500111222",
+    "date": "2025-07-16T09:30:00Z",
+    "content": "Hej, możesz w piątek odebrać paczkę?"
+  },
+  {
+    "id": 14,
+    "from": "+48500111222",
+    "to": "+48500777888",
+    "date": "2025-07-16T09:45:00Z",
+    "content": "Tak, odbiorę ją po pracy."
+  },
+  {
+    "id": 15,
+    "from": "+48500888999",
+    "to": "+48500111222",
+    "date": "2025-07-17T12:00:00Z",
+    "content": "Potwierdzam termin spotkania na poniedziałek."
+  }
+  ]
+  
+}
+ 
