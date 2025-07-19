@@ -32,7 +32,7 @@ function HomeModal({submitSend, showModal, showSmsModal1, show, HideModal, HideM
                             <ul>
                                 {recent ?  recent_correspondents.recent_correspondents.map((item) => {
                                     return (
-                                        <li key={item} onClick={()=>{setValue(item)}}>
+                                        <li key={item} onClick={()=>{setValue(item); setRecent(!recent);}}>
                                             <p>{item}</p>
                                         </li>
                                     );
@@ -66,7 +66,7 @@ function HomeModal({submitSend, showModal, showSmsModal1, show, HideModal, HideM
                             <ul>
                                 {recent ?  recent_correspondents_sms.recent_correspondents_sms.map((item) => {
                                     return (
-                                        <li key={item} onClick={()=>{setValueTel(item)}}>
+                                        <li key={item} onClick={()=>{setValueTel(item); setRecent(!recent);}}>
                                             <p>{item}</p>
                                         </li>
                                     );

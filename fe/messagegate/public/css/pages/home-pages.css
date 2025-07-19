@@ -89,7 +89,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-image: linear-gradient(-135deg, #FFD5FB, #C272FF, #8E32D4);
+  background-image: linear-gradient(to left, #664859, #64455e, #5e4264, #55416c, #474173, #374677, #234a79, #004e79, #005473, #04586a, #235c62, #375e5b);
   padding: 50px 20px 300px 20px;
   transition: all 1.5s;
 }
@@ -249,7 +249,7 @@
 #root .App #login-page .container .row .login-row-wrapper .right-panel form .login-button-wrapper .login-button .login-button-text {
   margin: 0;
   font-size: 24px;
-  background: linear-gradient(-135deg, #FFD5FB, #C272FF, #8E32D4);
+  background: linear-gradient(to left, #664859, #64455e, #5e4264, #55416c, #474173, #374677, #234a79, #004e79, #005473, #04586a, #235c62, #375e5b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
