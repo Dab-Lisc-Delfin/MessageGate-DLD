@@ -377,7 +377,7 @@ $menu-width: 200px;
                                     }
                                     .tile-home{
                                         position: absolute;
-                                        width: 400px;
+                                        width: 300px;
                                         max-width: 95%;
                                         max-height: 95%;
                                         top: 50%;
@@ -387,7 +387,7 @@ $menu-width: 200px;
                                         display: flex;
                                         justify-content: space-between;
                                         border: 1px solid #ccc;
-                                        padding: 10px 20px;
+                                        padding: 2px 2px;
                                         border-radius: 8px;
                                         .home-compose-button{
                                             margin: auto 0;
@@ -426,11 +426,11 @@ $menu-width: 200px;
                                             transform: translateX(-50%);
                                         }
                                         .tile-heading{
-                                            color: black;
-                                            font-size: 30px;
+                                            color: #ccc;
+                                            font-size: 24px;
                                             text-align: center;
-                                            height: 50px;
                                             margin: 0px;
+                                            margin-left: 10px;
                                         }
                                         .send-desc{
                                             background-color: white;
